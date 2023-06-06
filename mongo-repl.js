@@ -19,8 +19,8 @@ const config={
 	]
 }
 
-if(db.hello().isWritablePriary||db.hello().secondary){
-	rs.reconfigure(config)
+if(db.hello().isWritablePrimary||db.hello().secondary){
+	rs.reconfig(config)
 }
 else{
 	rs.initiate(config)
